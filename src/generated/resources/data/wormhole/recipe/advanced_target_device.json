@@ -6,18 +6,10 @@
     "BBB"
   ],
   "key": {
-    "A": {
-      "tag": "forge:dusts/glowstone"
-    },
-    "B": {
-      "tag": "forge:ingots/iron"
-    },
-    "C": {
-      "item": "wormhole:target_device"
-    },
-    "D": {
-      "tag": "forge:ingots/gold"
-    }
+    "A": "#c:dusts/glowstone",
+    "B": "#c:ingots/iron",
+    "C": "wormhole:target_device",
+    "D": "#c:ingots/gold"
   },
   "result": {
     "id": "wormhole:advanced_target_device"

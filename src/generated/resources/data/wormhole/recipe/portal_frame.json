@@ -6,15 +6,9 @@
     "ABA"
   ],
   "key": {
-    "A": {
-      "tag": "forge:ingots/iron"
-    },
-    "B": {
-      "tag": "forge:cobblestone"
-    },
-    "C": {
-      "tag": "forge:obsidian"
-    }
+    "A": "#c:ingots/iron",
+    "B": "#c:cobblestones",
+    "C": "#c:obsidians"
   },
   "result": {
     "id": "wormhole:portal_frame",

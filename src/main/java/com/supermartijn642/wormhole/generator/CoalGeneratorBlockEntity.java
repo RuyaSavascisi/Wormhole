@@ -9,7 +9,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
@@ -56,11 +55,11 @@ public class CoalGeneratorBlockEntity extends GeneratorBlockEntity implements II
     }
 
     private void burnItem(){
-        int burnTime = this.stack.isEmpty() ? 0 : ForgeHooks.getBurnTime(this.stack, RecipeType.SMELTING);
+        int burnTime = this.stack.isEmpty() ? 0 : this.getBurnTime(this.stack);
         if(burnTime > 0){
             this.burnTime = this.totalBurnTime = burnTime;
             if(this.stack.getCount() == 1){
-                ItemStack remainder = this.stack.getCraftingRemainingItem();
+                ItemStack remainder = this.stack.getCraftingRemainder();
                 this.stack = remainder == null ? ItemStack.EMPTY : remainder;
             }else
                 this.stack.shrink(1);
@@ -146,7 +145,11 @@ public class CoalGeneratorBlockEntity extends GeneratorBlockEntity implements II
 
     @Override
     public boolean isItemValid(int slot, ItemStack stack){
-        return Math.floor(ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) / 2.5) > 0;
+        return this.getBurnTime(stack) > 0;
+    }
+
+    private int getBurnTime(ItemStack stack){
+        return (int)Math.floor(stack.getBurnTime(RecipeType.SMELTING) / 2.5);
     }
 
     @Override

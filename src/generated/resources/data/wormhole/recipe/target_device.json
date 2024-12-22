@@ -6,18 +6,10 @@
     "BDB"
   ],
   "key": {
-    "A": {
-      "tag": "forge:dusts/redstone"
-    },
-    "B": {
-      "tag": "forge:ingots/iron"
-    },
-    "C": {
-      "tag": "forge:ender_pearls"
-    },
-    "D": {
-      "item": "minecraft:compass"
-    }
+    "A": "#c:dusts/redstone",
+    "B": "#c:ingots/iron",
+    "C": "#c:ender_pearls",
+    "D": "minecraft:compass"
   },
   "result": {
     "id": "wormhole:target_device"
