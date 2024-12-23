@@ -1,0 +1,6 @@
+{
+  "model": {
+    "model": "wormhole:block/coal_generator",
+    "type": "minecraft:model"
+  }
+}
