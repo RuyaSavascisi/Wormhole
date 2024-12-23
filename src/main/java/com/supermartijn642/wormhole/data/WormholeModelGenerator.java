@@ -20,7 +20,6 @@ public class WormholeModelGenerator extends ModelGenerator {
     public void generate(){
         // Portal frame
         this.cubeAll("block/portal_frame", ResourceLocation.fromNamespaceAndPath("wormhole", "portal_frame"));
-        this.model("item/portal_frame").parent("block/portal_frame");
 
         // Portal templates
         this.model("block/portals/portal_x")
@@ -57,12 +56,10 @@ public class WormholeModelGenerator extends ModelGenerator {
             this.model("block/portals/portal_y_" + color.getName()).parent("block/portals/portal_y").texture("all", "portal/portal_" + color.getName());
             this.model("block/portals/portal_z_" + color.getName()).parent("block/portals/portal_z").texture("all", "portal/portal_" + color.getName());
         }
-        this.model("item/portal").parent("block/portals/portal_x_red");
 
         // Portal stabilizer
         this.cubeAll("block/portal_stabilizer_off", ResourceLocation.fromNamespaceAndPath("wormhole", "portal_stabilizer_off"));
         this.cubeAll("block/portal_stabilizer_on", ResourceLocation.fromNamespaceAndPath("wormhole", "portal_stabilizer_on"));
-        this.model("item/portal_stabilizer").parent("block/portal_stabilizer_off");
 
         // Energy cells
         for(int i = 0; i < 16; i++){
@@ -78,11 +75,7 @@ public class WormholeModelGenerator extends ModelGenerator {
         for(TargetCellType type : TargetCellType.values()){
             for(int i = 0; i <= type.getVisualCapacity(); i++)
                 this.cubeAll("block/target_cells/" + type.getRegistryName() + "_" + i, ResourceLocation.fromNamespaceAndPath("wormhole", "target_cells/" + type.getRegistryName() + "_" + i));
-            this.model("item/" + type.getRegistryName()).parent("block/target_cells/" + type.getRegistryName() + "_0");
         }
-
-        // Coal generator
-        this.model("item/coal_generator").parent("block/coal_generator");
 
         // Target devices
         this.itemGenerated("item/target_device", ResourceLocation.fromNamespaceAndPath("wormhole", "target_device"));

@@ -6,10 +6,6 @@
     },
     {
       "type": "minecraft:single",
-      "resource": "wormhole:generators/coal_generator_unlit"
-    },
-    {
-      "type": "minecraft:single",
       "resource": "wormhole:portal/portal_red"
     },
     {
@@ -23,10 +19,6 @@
     {
       "type": "minecraft:single",
       "resource": "wormhole:portal/portal_cyan"
-    },
-    {
-      "type": "minecraft:single",
-      "resource": "wormhole:generators/coal_generator_side"
     },
     {
       "type": "minecraft:single",
@@ -130,10 +122,6 @@
     },
     {
       "type": "minecraft:single",
-      "resource": "wormhole:generators/coal_generator_backside"
-    },
-    {
-      "type": "minecraft:single",
       "resource": "wormhole:portal/portal_purple"
     },
     {
@@ -218,7 +206,19 @@
     },
     {
       "type": "minecraft:single",
+      "resource": "wormhole:generators/coal_generator_backside"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "wormhole:generators/coal_generator_unlit"
+    },
+    {
+      "type": "minecraft:single",
       "resource": "wormhole:generators/coal_generator_lit"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "wormhole:generators/coal_generator_side"
     }
   ]
 }

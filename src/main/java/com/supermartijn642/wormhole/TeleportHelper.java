@@ -8,12 +8,10 @@ import net.minecraft.network.protocol.game.ClientboundSetPassengersPacket;
 import net.minecraft.server.TickTask;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.TicketType;
 import net.minecraft.server.players.PlayerList;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.LevelData;
 import net.minecraft.world.phys.Vec3;
@@ -82,8 +80,6 @@ public class TeleportHelper {
     }
 
     private static Entity teleportEntity(Entity entity, ServerLevel targetLevel, PortalTarget target){
-        ChunkPos targetChunkPos = new ChunkPos(target.getPos());
-        targetLevel.getChunkSource().addRegionTicket(TicketType.POST_TELEPORT, targetChunkPos, 1, entity.getId());
         if(targetLevel == entity.level()){
             if(entity instanceof ServerPlayer){
                 entity.teleportTo(targetLevel, target.x, target.y, target.z, Set.of(), target.yaw, 0, true);

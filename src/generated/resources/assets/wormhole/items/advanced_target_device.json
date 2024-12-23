@@ -1,0 +1,6 @@
+{
+  "model": {
+    "model": "wormhole:item/advanced_target_device",
+    "type": "minecraft:model"
+  }
+}

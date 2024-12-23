@@ -87,7 +87,7 @@ public class PortalBlock extends PortalGroupBlock implements SimpleWaterloggedBl
     }
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state){
+    protected ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData){
         return ItemStack.EMPTY;
     }
 
