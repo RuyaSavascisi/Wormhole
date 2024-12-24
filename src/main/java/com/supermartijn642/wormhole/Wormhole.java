@@ -178,5 +178,6 @@ public class Wormhole {
         handler.addGenerator(WormholeRecipeGenerator::new);
         handler.addGenerator(WormholeTagGenerator::new);
         handler.addGenerator(WormholeAtlasSourceGenerator::new);
+        handler.addGenerator(WormholeItemInfoGenerator::new);
     }
 }
